@@ -1,15 +1,15 @@
 .side-bar
   .header
     %h3.header__name
-      ユーザーネーム
+      = current_user.name
     %ul.header__lists
       %li.list
         = link_to do
           = icon('fa', 'edit')
           %span<>
       %li.list
-        = link_to do
-          = icon('fa', 'cog')
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: 'icon')
           %span<>
   .groups
     .group
