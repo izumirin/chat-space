@@ -54,8 +54,9 @@ $('.js-form').on('submit', function(e){
   .done(function(data){
     var html = buildHTML(data);
     $('.messages').append(html);
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
+    $('input').prop('disabled', false);
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500);
   })
    .fail(function(){
      alert('error');
