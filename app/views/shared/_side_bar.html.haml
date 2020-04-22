@@ -4,8 +4,8 @@
       = current_user.name
     %ul.header__lists
       %li.list
-        = link_to new_group_path(current_user) do
-          = icon('fa', 'edit')
+        = link_to new_group_path do
+          = icon('fa', 'edit', class: 'icon')
           %span<>
       %li.list
         = link_to edit_user_path(current_user) do
