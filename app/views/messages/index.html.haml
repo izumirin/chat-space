@@ -8,10 +8,10 @@
         .left-header__title
           = @group.name
         %ul.left-header__members
-          Members:&nbsp
-        - @group.users.each do |user|
-          .member
-            = user.name
+          Members:
+          %li.member
+            - @group.users.each do |user|
+              = user.name
       .right-header
         .right-header__button
           = link_to edit_group_path(@group) do
@@ -20,7 +20,7 @@
       = render @messages
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :content,  class: 'form__message',  placeholder: 'type a message'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = icon('fas', 'image', class: 'icon')

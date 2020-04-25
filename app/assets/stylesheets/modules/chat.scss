@@ -20,7 +20,7 @@
         margin-top: 35px;
       }
       &__members {
-        display: flex;
+        @include flexbox();
         color: $light_gray;
         font-size: 12px;
         margin-top: 15px;
@@ -96,36 +96,39 @@
     bottom: 0;
     left: 300px;
     z-index: 5;
+   form {
+     display: flex;
+   }
     &__message {
-      border: none;
-      float: left;
       height: 50px;
-      width: calc(100% - 150px);
+      width: 100%;
+      padding: 0 10px;
+      color: $light_gray;
+      border-style: none;
+      font-size: 16px;
+      position: relative;
+    }
+    &__submit {
+      margin-left: 15px;
+      height: 50px;
+      padding: 0 30px;
+      background-color: $light_blue;
+      color: $white;
+      cursor: pointer;
+      font-size: 16px;
     }
     &__mask {
-      background-color: $white;
-      float: left;
-      height: 50px;
-      padding-right: 10px;
-      &__image {
-        font-size: 20px;
-        line-height: 50px;
-        cursor: pointer;
-      }
+      position: relative;
+    }
+    &__mask__image {
+      font-size: 1.3rem;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
       .hidden {
         display: none;
       }
     }
-    &__submit {
-      background-color: $light_blue;
-      border: none;
-      color: $white;
-      float: right;
-      font-size: 16px;
-      height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
-      cursor: pointer;
-    }
-  }
+}
 }
